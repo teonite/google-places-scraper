@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  scrapy:
+    build: .
+    image: tcn.re/tnt-analytics/scraper-geo
+    depends_on:
+      - postgres
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: geoscraper
+      DB_PASS: geoscraper
+      DB_NAME: places
+
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: geoscraper
+      POSTGRES_USER: geoscraper
+      POSTGRES_DB: places

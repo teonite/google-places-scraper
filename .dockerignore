@@ -1,0 +1,11 @@
+venv
+.idea
+.DS_Store
+geo_search/__pycache__
+*.pyc
+volumes
+.gitlab-ci.yml
+Makefile
+docker-compose.yml
+Dockerfile
+.gitignore
